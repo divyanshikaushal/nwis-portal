@@ -1,0 +1,2 @@
+import {bucket,failure} from '@/lib/server';
+export async function GET(req:Request){try{const id=new URL(req.url).searchParams.get('id');if(!id||!/^[a-f0-9-]{36}$/.test(id))return new Response('Invalid report',{status:400});const obj=await bucket().get(id);if(!obj)return new Response('Report not found',{status:404});return new Response(obj.body,{headers:{'Content-Type':obj.httpMetadata?.contentType||'application/octet-stream','X-Content-Type-Options':'nosniff','Content-Security-Policy':"default-src 'none'; sandbox"}});}catch(e){return failure(e);}}
