@@ -1,3 +1,7 @@
+# Vercel deployment update
+
+This checkout now builds with standard Next.js. Follow [Vercel setup](docs/VERCEL.md) for build settings and persistent storage. Older Sites-specific instructions below describe the original hosting environment.
+
 # NWIS — Nearby Wells Intelligence System
 
 SIH 26121 demonstration prototype. Standalone decision support alongside eRTMAC.
